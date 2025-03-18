@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  basic_api:
+    build: .
+    ports:
+      - "8000:8080"
+  mongo:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+
+  redis:
+    image: redis:latest
